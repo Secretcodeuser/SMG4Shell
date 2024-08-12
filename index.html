@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMG4Shell</title>
+</head>
+<body>
+
+    <style>
+        .body-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-family: Arial, sans-serif;
+        }
+        .tabs {
+          display: flex;
+          justify-content: center;
+          margin: 20px;
+        }
+        .tabs button {
+          padding: 10px 15px;
+          margin: 0 5px;
+          cursor: pointer;
+        }
+        .tab-content {
+          display: none;
+          width: 80%;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+        .tab-content.active {
+          display: block;
+        }
+        </style>
+        </head>
+        <body>
+        <div class="body-container">
+          <div class="tabs">
+            <button onclick="showTab('home')">Home</button>
+            <button onclick="showTab('about')">About</button>
+            <button onclick="showTab('contact')">Download</button>
+          </div>
+        
+          <div id="home" class="tab-content active">
+            <h2>Home</h2>
+            <p>Welcome to SMG4Shell!</p>
+            <br>
+            <p>To download, click Download</p>
+          </div>
+        
+          <div id="about" class="tab-content">
+            <h2>About</h2>
+            <p>Learn more About us here.</p>
+            <p>SMG4Shell Is a CMDFanMade But named SMG4Shell, and the cmd is exe!</p>
+            <p>Want to give it a try?, Click Download!</p>
+          </div>
+        
+          <div id="contact" class="tab-content">
+            <h2>Download</h2>
+           To Download, click Download
+           <a href="SMG4Shell.msi" download="download"><button>Download</button></a>
+          </div>
+        </div>
+        
+    <script>
+        function showTab(tabId) {
+          const allTabContents = document.querySelectorAll('.tab-content');
+          allTabContents.forEach(content => content.classList.remove('active'));
+        
+          const tabContent = document.getElementById(tabId);
+          tabContent.classList.add('active');
+        }
+        </script>
+</body>
+</html>
